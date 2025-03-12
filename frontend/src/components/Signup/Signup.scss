@@ -1,0 +1,208 @@
+@import "../../constants.scss";
+
+.signup-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../../assets/candlelitwriting.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .signup-form {
+        background-color: $color-white;
+        padding: 30px 35px;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 350px;
+        text-align: center;
+        border: 1px solid $color-border;
+
+        h2 {
+            font-family: $ubuntu-mono;
+            font-size: 27.5px;
+            margin-bottom: 30px;
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+
+            .input-wrapper {
+                display: flex;
+                align-items: center;
+                position: relative;
+            }
+
+            .form-icon {
+                position: absolute;
+                left: 8px;
+                color: $color-light-border;
+                padding: 4px;
+                font-size: 15px;
+            }
+
+            input {
+                width: 100%;
+                border: 1px solid $color-light-border;
+                border-radius: 0.25em;
+                box-sizing: border-box;
+                padding-left: 2.0rem;
+                height: 40px;
+                font-family: $ubuntu-mono;
+                font-size: 15px;
+                transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+                
+                &:focus {
+                    border: 1px solid $color-primary !important;
+                    outline: none;
+                }
+
+                &.error {
+                    border: 1px solid $color-error-light; 
+                    outline: none;
+
+                    &:focus {
+                        border: 1px solid $color-error-light !important; 
+                    }
+                }
+            } 
+
+            .error-message {
+                color: $color-error-light; 
+                font-size: 13px;
+                margin-top: 5px;
+                text-align: left;
+                font-family: $ubuntu-mono;
+        
+                .fa-icon {
+                  margin-right: 5px;
+                }
+            }
+        }
+
+        .password-group {
+            margin-bottom: 15px;
+        }
+    }
+
+    .checkbox-container {
+        display: flex; 
+        align-items: center;
+        justify-content: left;
+        margin-bottom: 10px;
+        position: relative;
+
+        input {
+            appearance: none;
+            margin: 0;
+            margin-right: 7px;
+            border: 1px solid $color-light-border;
+            background-color: $color-white; 
+            border-radius: 0.25em;
+            box-sizing: border-box;
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+            position: relative;
+
+            &:checked {
+                border: 1px solid $color-primary !important;
+                background-color: $color-primary;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 43%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) rotate(-50deg);
+                    transform-origin: center;
+                    width: 9px;
+                    height: 4px;
+                    border-left: 2px solid white;
+                    border-bottom: 2px solid white;
+                }
+            }
+        }
+
+        label {
+            font-family: $ubuntu-mono;
+            font-size: 15px;
+            cursor: pointer;
+            text-align: left;
+
+            .terms-link {
+                font-family: $ubuntu-mono;
+                color: $color-primary;
+                background: none;
+                border: none;
+                font-size: 15px;
+                cursor: pointer;
+                padding: 0;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+                @media (max-width: 480px) {
+                    font-size: 13px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                font-size: 13px;
+            }
+        }
+
+    }
+    
+
+    .signup-button {
+        height: 40px;
+        width: 100%;
+        padding: 10px;
+        margin-top: 12.5px;
+        margin-bottom: 22px;
+        border-radius: 4px;
+        background-color: $color-primary;
+        color: $color-white;
+        border: 1px solid $color-primary;
+        cursor: pointer;
+        font-family: $ubuntu-mono;
+        font-size: 16px;
+        transition: border-color 0.5s, background-color 0.5s;
+
+        &:hover {
+            background-color: $color-secondary;
+            border: 1px solid $color-secondary;
+        }
+
+        &:disabled {
+            background-color: $color-disabled-bg;
+            border: 1px solid $color-disabled-bg;
+            color: $color-disabled-text;
+            cursor: not-allowed;
+        }
+    }
+
+    .signup-link {
+        font-size: 15px;
+        font-family: $ubuntu-mono;
+
+        a {
+            text-decoration: none;
+            color: $color-primary;
+
+            &:hover {
+                color: $color-secondary;
+                text-decoration: underline;
+            }
+        }
+
+        @media (max-width: 480px) {
+            font-size: 13px;
+        }
+    }   
+}

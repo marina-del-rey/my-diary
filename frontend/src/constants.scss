@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&family=Ranchers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+/* 
+   fonts
+*/
+$main-font: "Leckerli One", cursive;
+$ubuntu-mono:  "Lato", sans-serif;
+
+/* 
+   colors
+*/
+// --- primary colors ---
+$color-primary: #FF8A65;        /* Soft Coral */
+$color-primary-hover: #D84315;  /* Dark Burnt Coral */
+$color-secondary: #D84315;      /* Dark Burnt Coral */
+$color-header-bg: #3E2723;      /* Rich Dark Brown */
+
+// --- neutral colors ---
+$color-white: #ffffff;       
+$color-light-grey: #f9f9f9;   
+$color-grey: #f0f0f0;         
+$color-border: #d4dde1;        
+$color-light-border: #D4DCE0;  
+$color-dropdown-border: #ddd;
+$color-disabled-bg: #e0e0e0;   
+$color-disabled-text: #a0a0a0; 
+$color-cancel-hover: #d0d0d0;
+
+// --- text colors ---
+$color-text-dark: #333;        
+$color-text-light: #7A9199;    
+$color-description: #4C4C4C;   
+$color-success: #51a775;      
+$color-error: #D94F4F;         
+$color-error-light: #FF4D4F;   
+$color-error-hover: #C03F3F;
+
+// --- toast colors ---
+$bg-success: #dcf7d4;          // toast success background 
+$bg-error: #f3c3c3;            // toast error background 
+
+// --- shadows ---
+$shadow-light: rgba(0, 0, 0, 0.09);  
+$shadow-dark: rgba(0, 0, 0, 0.9);    
+$shadow-hover: rgba(0, 0, 0, 0.2);  
+$shadow-hover-strong: rgba(0, 0, 0, 0.4); 
+$shadow-header: rgba(0, 0, 0, 0.1);
+
+// misc
+$modal-overlay-background: rgba(0, 0, 0, 0.5);
+
+
+/*
+$color-primary: #00A3D9;       
+$color-primary-hover: #007BA7;
+$color-secondary: #00C0FF;     
+$color-header-bg: #003647; 
+*/

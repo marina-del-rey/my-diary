@@ -1,0 +1,66 @@
+@import "../../constants.scss";
+
+// modal styles
+.terms-conditions-modal-content {
+    background-color: $color-white; 
+    padding: 30px 35px; 
+    border-radius: 10px; 
+    width: 100%;
+    max-width: 375px; 
+    border: 1px solid $color-border;
+    transform: translateY(-50px); 
+
+    &.modal-loading {
+        //pointer-events: none; 
+        cursor: wait; 
+    }
+
+    button:disabled {
+        cursor: not-allowed;
+    }
+}
+
+.terms-conditions-content {
+    h3 {
+        font-family: $ubuntu-mono;
+        font-size: 20px;
+        margin-top: 5px;
+        padding: 0; 
+        text-align: center;
+    }
+
+    p {
+        margin-top: 20px;
+        font-size: 16px;
+        font-family: $ubuntu-mono;
+    }
+
+    ol {
+        font-family: $ubuntu-mono;
+    }
+
+    .button-group {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+
+        .close-button {
+            height: 36px;
+            width: 22.5%;
+            padding: 8px;
+            border-radius: 4px;
+            font-family: $ubuntu-mono;
+            font-size: 14px;
+            cursor: pointer;
+            background-color: $color-disabled-bg; 
+            color: $color-text-dark;
+            border: 1px solid $color-disabled-bg; 
+            transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+
+            &:hover {
+                background-color: $color-cancel-hover;
+                border: 1px solid $color-cancel-hover;
+            }
+        }
+    }
+}

@@ -1,0 +1,184 @@
+@import "../../constants.scss";
+
+.home-container {
+    margin-top: 60px;
+
+    .breadcrumb-container {
+        max-width: 800px;
+        margin: 0 auto; 
+    }
+
+    .content-area {
+        margin-top: 0;
+        
+        .loading-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px; 
+            margin-top: 10px;
+        }
+
+        .discover-container {
+            font-family: $ubuntu-mono;
+
+            ol {
+                padding: 0;
+                margin: 0;
+                list-style-position: outside; 
+            }
+            
+            li {
+                border-bottom: 1px solid $color-border;
+                padding: 20px 0;
+            }
+            
+            .date-user-container {
+                display: flex;
+                align-items: center; 
+                gap: 1px;
+                text-transform: uppercase;
+                font-family: $ubuntu-mono;
+                margin-bottom: 10px;
+
+                .date {
+                    margin: 0;
+                    font-size: 14px; 
+                    color: $color-text-light;
+                    padding: 0;
+                }
+
+                .date::before {
+                    content: "•";
+                    margin: 0px 3px 0px 5px;
+                }
+
+                .user-icon {
+                    margin: 0;
+                    font-size: 14px; 
+                    text-decoration: none;
+                    color: $color-secondary;
+                    transition: border-color .2s, background-color .2s, color .2s;
+                    display: flex; 
+                    align-items: center; 
+                    
+                    .fa-icon {
+                        font-size: 10px;
+                        margin-right: 4px; 
+                    }
+
+                    &:hover {
+                        color: $color-primary;
+                    }
+                }
+            }
+
+            .diary-title {
+                font-size: 1.4em; 
+                font-weight: bold;
+                font-family: $ubuntu-mono; 
+                color: $color-text-dark; 
+                word-break: break-word;
+                text-decoration: none; 
+                display: block; 
+                margin: 0 0 5px;
+                transition: border-color .2s, background-color .2s, color .2s;
+
+                &:hover {
+                    color: $color-primary;
+                }
+            }
+
+            .description {
+                margin: 0;
+                font-family: $ubuntu-mono;
+                color: $color-description;
+                word-wrap: break-word;
+            }
+
+        }
+    }
+
+    .header-title-container {
+        border-bottom: 1px solid $color-border;
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+
+        .tabs {
+            display: flex;
+
+            button {
+                padding: 10px 20px;
+                font-family: $ubuntu-mono;
+                font-size: 15px;
+                color: $color-text-dark;
+                background-color: $color-light-grey; // light gray background for inactive tabs
+                border: 1px solid $color-border;
+                border-bottom: none; // no bottom border for tab effect
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s ease;
+                outline: none;
+
+                transition: background-color 0.3s, color 0.3s ease; 
+
+                &:not(:last-child) {
+                    margin-right: 4px; // small gap between tabs
+                }
+
+                &.active {
+                    color: $color-white;
+                    background-color: $color-primary;
+                    border-color: $color-primary;
+                    font-weight: bold;
+                }
+
+                .fa-icon {
+                    margin-right: 8px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    
+                    &.compass {
+                        margin-top: -3px;
+                    }
+
+                }
+
+                &:hover:not(.active) {
+                    background-color: lighten($color-light-grey, 10%);
+                }
+    
+            }
+        }
+
+        .new-diary-button {
+            background-color: $color-primary;
+            color: $color-white;
+            border: none;
+            padding: 10px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-family: $ubuntu-mono;
+            transition: background-color 0.3s;
+
+            .icon-plus {
+                transition: transform 0.4s; 
+            }
+
+            &:hover {
+                background-color: $color-secondary; 
+
+                .icon-plus {
+                    transform: rotate(90deg); /* spin the icon */
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 460px) {
+        .new-diary-button {
+            display: none;
+        }
+    }
+}

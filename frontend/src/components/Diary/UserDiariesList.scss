@@ -1,0 +1,108 @@
+@import "../../constants.scss";
+
+.user-diaries-list {
+    //position: relative;
+    font-family: $ubuntu-mono;
+    
+    .no-diaries-message {
+        text-align: center;
+        color: $color-text-dark;
+        font-size: 15px;
+        margin-top: 45px;
+        margin-bottom: 20px;
+        font-style: italic;
+    }
+
+    ol {
+        padding: 0;
+        margin: 0;
+        list-style-position: outside; 
+    }
+    
+    li {
+        border-bottom: 1px solid $color-border;
+        padding: 20px 0 20px;
+    }
+
+    .date-user-container {
+        display: flex;
+        align-items: center; 
+        gap: 1px;
+        text-transform: uppercase;
+        font-family: $ubuntu-mono;
+        margin-bottom: 10px;
+
+        .user-icon {
+            margin: 0;
+            font-size: 14px; 
+            text-decoration: none;
+            color: $color-secondary;
+            display: flex; 
+            align-items: center; 
+            transition: color 0.2s;
+            
+            .fa-icon {
+                font-size: 10px;
+                margin-right: 4px; 
+            }
+
+            &:hover {
+                color: $color-primary;
+            }
+        }
+
+        .date {
+            margin: 0;
+            font-size: 14px; 
+            color: $color-text-light;
+
+            &::before {
+                content: "•";
+                margin: 0px 3px 0px 5px;
+            }
+        }
+    }
+    
+    .diary-title {
+        font-size: 1.4em; 
+        font-weight: bold;
+        color: $color-text-dark; 
+        word-break: break-word;
+        text-decoration: none; 
+        display: block; 
+        margin: 0 0 5px;
+        transition: color 0.2s;
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+             
+    .description {
+        margin: 0;
+        font-family: $ubuntu-mono;
+        color: $color-description;
+        word-wrap: break-word;
+    }
+
+    .dropdown-icon {
+        cursor: pointer;
+        margin-left: auto;
+        font-size: 12px;
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        right: 0;
+        background: $color-white;
+        border: 1px solid $color-border;
+        z-index: 1000;
+        padding: 10px;
+    }
+    
+}
+

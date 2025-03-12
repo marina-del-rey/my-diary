@@ -1,0 +1,95 @@
+@import "../../constants.scss";
+
+// modal styles
+.delete-diary-modal-content {
+    background-color: $color-white; 
+    padding: 30px 35px; 
+    border-radius: 10px; 
+    width: 100%;
+    max-width: 375px; 
+    text-align: center; 
+    border: 1px solid $color-border;
+    transform: translateY(-50px); 
+
+    &.modal-loading {
+        //pointer-events: none; 
+        cursor: wait; 
+    }
+
+    button:disabled {
+        cursor: not-allowed;
+    }
+}
+
+// delete entry form styles
+.confirm-delete-diary {
+    h3 {
+        font-family: $ubuntu-mono;
+        font-size: 20px;
+        margin-bottom: 20px;    
+        margin-top: 5px;
+        padding: 0; 
+        font-weight: none;
+    }
+
+    .warning-icon {
+        font-size: 25px;
+        color: $color-error;
+    }
+
+    p {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-size: 16px;
+        font-family: $ubuntu-mono;
+        text-align: center;
+    }
+
+    .button-group {
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
+        margin-top: 30px;
+
+        .confirm-button,
+        .cancel-button {
+            height: 36px;
+            width: 22.5%;
+            padding: 8px;
+            border-radius: 4px;
+            font-family: $ubuntu-mono;
+            font-size: 14px;
+            cursor: pointer;
+            transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+        }
+        
+        .confirm-button {
+            background-color: $color-error; 
+            color: white;
+            border: 1px solid $color-error; 
+
+            &:hover {
+                background-color: $color-error-hover;
+                border: 1px solid $color-error-hover;
+            }
+
+            &:disabled {
+                background-color: $color-disabled-bg; 
+                border: 1px solid $color-disabled-bg; 
+                color: $color-disabled-text; 
+                cursor: not-allowed;
+            }
+        }
+
+        .cancel-button {
+            background-color: $color-disabled-bg; 
+            color: #333;
+            border: 1px solid $color-disabled-bg; 
+
+            &:hover {
+                background-color: $color-cancel-hover;
+                border: 1px solid $color-cancel-hover;
+            }
+        }
+    }  
+}

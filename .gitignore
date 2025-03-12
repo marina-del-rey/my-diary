@@ -1,0 +1,21 @@
+# ignore environment variables
+.env
+
+# ignore logs
+logs/
+*.log
+npm-debug.log*
+
+# ignore node modules
+node_modules/
+
+# ignore editor directories and files
+.vscode/
+!.vscode/extensions.json
+
+# ignore dockerfiles
+Dockerfile
+docker-compose.yml
+
+# ignore nginx configuration
+nginx.conf

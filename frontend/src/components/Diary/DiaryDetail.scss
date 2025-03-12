@@ -1,0 +1,276 @@
+@import "../../constants.scss";
+
+.diary-detail-container {
+    margin-top: 60px;
+    
+    .breadcrumb-container {
+        max-width: 800px;
+        margin: 0 auto; 
+    }
+
+    .main-content {
+        display: flex;
+        justify-content: center;
+        position: relative; 
+        width: 100%; 
+    }
+
+    .content-area {
+        background-color: $color-white;
+        padding: 30px 50px;
+        max-width: 800px;
+        margin: 0 auto; 
+        border: 1px solid $color-border;
+        box-sizing: border-box;
+        overflow-y: auto;
+        margin-bottom: 50px;
+        position: relative; 
+    
+        .diary-detail {
+
+            .loading-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 150px; 
+            }
+
+            .diary-not-found-container {
+                display: flex;
+                justify-content: center;
+                p {
+                    font-family: $ubuntu-mono;
+                    font-size: 17px;
+                }
+            }
+
+            .diary-title-container {
+                border-bottom: 1px solid $color-border;
+                padding-bottom: 15px;
+                // display: flex;
+                // justify-content: space-between; 
+                // align-items: center; 
+
+                .diary-title {
+                    margin: 0;
+                    font-size: 30px;
+                    font-family: $ubuntu-mono;
+                    font-weight: bold;
+                    color: $color-text-dark; 
+                    word-break: break-word;
+                    // text-decoration: none; 
+                    // display: block; 
+                    // transition: border-color .2s, background-color .2s, color .2s;
+                }
+            }
+
+            .date-user-container {
+                gap: 1px;
+                display: flex;
+                align-items: center; 
+                text-transform: uppercase;
+                font-family: $ubuntu-mono;
+                margin-bottom: 10px;
+
+                .date {
+                    margin: 0;
+                    font-size: 14px; 
+                    color: $color-text-light;
+
+                    &::before {
+                        content: "•";
+                        margin: 0px 3px 0px 5px;
+                    }
+                }
+
+                .user-icon {
+                    font-size: 14px; 
+                    text-decoration: none;
+                    color: $color-secondary;
+                    display: flex; 
+                    align-items: center; 
+                    transition: color .2s;
+
+                    &:hover {
+                        color: $color-primary;
+                    }
+    
+                    .fa-icon {
+                        font-size: 10px;
+                        margin-right: 4px; 
+                    }
+                }
+            }
+                                       
+            .description {
+                margin: 10px 0 40px;
+                font-family: $ubuntu-mono;
+                color: $color-description;
+                font-style: italic;
+                word-wrap: break-word;
+            }
+
+            .entry-list-text {
+                margin: 0;
+                font-family: $ubuntu-mono;
+                font-size: 12.5px;
+                color: $color-text-dark;
+                border-bottom: 1px solid $color-border;
+                padding-bottom: 7.5px;
+            }
+
+        }
+    }
+
+    .sidebar {
+        width: 120px;
+        background-color: $color-white;
+        padding: 17px;
+        border: 1px solid $color-border;
+        position: fixed;       
+        margin-left: 1000px;
+        z-index: 999;
+        transform-origin: left; 
+
+        @media (max-width: 1200px) {
+            will-change: transform;
+            width: 130px;
+            transform: translateX(100%);
+            transition: transform 0.5s ease-in-out; 
+            height: 100vh;
+            top: 0;
+            z-index: 50;
+
+            ul {
+                margin-top: 50px !important;
+            }
+
+            &.visible {
+                right: 0;
+                transform: translateX(0);
+                visibility: visible;
+                transition: transform 0.5s ease-in-out; 
+            }
+
+            &:not(.visible) {
+                transform: translateX(100%);
+                transition: transform 0.5s ease-in-out, visibility 0s linear 0.5s;
+            }
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                margin-bottom: 15px;
+
+                button {
+                    font-family: $ubuntu-mono;
+                    width: 100%;
+                    padding: 10px;
+                    background-color: $color-primary;
+                    color: $color-white;
+                    border: none;
+                    cursor: pointer;
+                    border-radius: 4px; 
+                    transition: background-color 0.3s ease;
+                    display: flex;
+                    justify-content: center;
+                    
+                    &:hover {
+                        background-color: $color-primary-hover;
+                    }
+
+                    &:disabled {
+                        background-color: $color-disabled-bg; 
+                        border: 1px solid $color-disabled-bg; 
+                        color: $color-disabled-text; 
+                        cursor: not-allowed;
+                    }
+
+                    .fa-icon {
+                        margin-top: 2px;
+                        margin-right: 5px;
+                    }
+                }
+
+                .delete-entries-button, .delete-diary-button {
+                    font-size: 12px; 
+
+                    .fa-icon {
+                        transition: transform 0.6s; 
+                    }
+                    
+                    &:hover {
+                        .fa-icon {
+                            transform: rotateY(180deg); 
+                        }
+                    }
+                }
+
+                .add-entry-button {
+                    .fa-icon {
+                        transition: transform 0.5s; 
+                    }
+
+                    &:hover {
+                        .fa-icon {
+                            transform: rotate(90deg); 
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+
+    .toggle-sidebar-button {
+        display: none;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: $color-primary-hover;
+        }
+
+        @media (max-width: 1200px) {
+            display: block;
+            background-color: $color-primary;
+            color: $color-white;
+            padding: 10px;
+            border-radius: 0.25em;
+            border: none;
+            font-family: $ubuntu-mono;
+            cursor: pointer;
+            position: fixed;
+            bottom: 20px;
+            left: 10px;
+            z-index: 1001;
+        }
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $modal-overlay-background; 
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease, visibility 0s linear 0.3s; 
+        z-index: 45; 
+
+        @media (max-width: 1200px) {
+            display: block;  // Show overlay only when mobile media query is active
+
+            &.visible {
+                visibility: visible;
+                opacity: 1;
+                transition: opacity 0.3s ease; 
+            }
+        }
+    }
+    
+}

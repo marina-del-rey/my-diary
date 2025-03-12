@@ -1,0 +1,38 @@
+@import "../../constants.scss";
+
+.Toastify__toast {
+    font-family: $ubuntu-mono !important;  
+    font-size: 15px !important;
+    border-radius: 4px !important;
+    box-shadow: 0 0 20px 0 $shadow-light !important;
+}
+
+.Toastify__toast--success {
+    background-color: $bg-success !important;
+    color: $color-success !important;
+}
+.Toastify__toast--error {
+    background: $bg-error !important;
+    color: $color-error !important;
+}
+
+.custom-close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    margin-right: 10px;
+
+    .fa-icon {
+        font-size: 18px;
+        color: $shadow-hover;
+        transition: color 0.3s ease; 
+    }
+
+    &:hover {
+        .fa-icon {
+            color: $shadow-hover-strong; 
+        }
+    }
+}

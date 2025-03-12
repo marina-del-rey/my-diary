@@ -1,0 +1,80 @@
+@import "../../constants.scss";
+
+.header {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    background-color: $color-header-bg; 
+    z-index: 1000; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 50px; 
+    box-shadow: 0 4px 6px $shadow-header; 
+
+    .header-content {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center; 
+        width: 100%; 
+        padding: 0 10px; 
+
+        .header-title-link {
+            text-decoration: none;
+            transition: text-shadow 0.2s ease-in-out;
+
+            .header-title {
+                font-family: $main-font;
+                font-size: 1.75rem; 
+                color: $color-white;
+            }
+
+            &:hover {
+                text-shadow: $color-light-grey 1px 0 10px;
+            }
+        }
+
+        .nav-items {
+            display: flex;
+            align-items: center; 
+
+            .nav-button {
+                font-family: $ubuntu-mono;
+                background-color: $color-primary; 
+                color: $color-white; 
+                border: none; 
+                border-radius: 5px; 
+                padding: 10px 20px; 
+                font-size: 15px; 
+                cursor: pointer; 
+                transition: background-color 0.3s; 
+                margin-right: 10px; /* space between buttons */
+                line-height: normal;
+                white-space: nowrap;
+
+                &.log-in {
+                    margin-left: 10px;
+                }
+
+                &:hover {
+                    background-color: $color-secondary; 
+                }
+
+                &:last-child {
+                    margin-right: 0; 
+                }
+            }
+        }
+    }  
+}
+  
+@media (max-width: 700px) {
+    .nav-items {
+        display: none !important;
+    }
+
+    .hamburger-container {
+        display: block; 
+    }
+}

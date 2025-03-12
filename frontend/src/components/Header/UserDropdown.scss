@@ -1,0 +1,88 @@
+@import "../../constants.scss";
+
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 17px;
+
+    .dropdown-trigger {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        color: $color-white;
+        font-family: $ubuntu-mono;
+
+        .profile-pic {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover; 
+        }
+
+        .greeting {
+            font-size: 16px;
+            margin-right: 8px;
+        }
+
+        .dropdown-icon {
+            font-size: 13px;
+            transition: transform 0.4s ease;
+        }
+    }
+
+    .dropdown-content {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: $color-white;
+        border: 1px solid $color-dropdown-border;
+        border-radius: 4px;
+        min-width: 150px;
+        padding: 4px 10px;
+        z-index: 1000;
+
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.1s ease, opacity 0.1s ease;
+
+        &.open {
+            max-height: 500px; 
+            opacity: 1;
+        }
+
+        .dropdown-button,
+        .logout-button {
+            width: 100%;
+            background-color: $color-white;
+            border: 0; 
+            padding: 8px 4px;
+            text-align: left;
+            cursor: pointer;
+            font-family: $ubuntu-mono;
+            font-size: 15px;
+            transition: margin-left 0.2s ease, color 0.2s ease;
+
+            &:hover {
+                margin-left: 5px;
+                color: $color-primary;
+            }
+
+            .fa-icon {
+                font-size: 12px;
+                margin-right: 8px;
+            }
+        }
+
+        .logout-button-container {
+            border-top: 1px solid $color-dropdown-border;
+
+            .logout-button {
+                margin-top: 5px;
+            }
+        }
+    }  
+}

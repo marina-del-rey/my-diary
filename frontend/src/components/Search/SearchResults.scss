@@ -1,0 +1,206 @@
+@import "../../constants.scss";
+
+.search-results-container {
+    margin-top: 60px;
+
+    .breadcrumb-container {
+        max-width: 800px;
+        margin: 0 auto; 
+    }
+
+    .content-area {
+        margin-top: 0; 
+
+        .loading-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px; 
+        }
+
+        h3 {
+            font-size: 30px;
+            font-family: $ubuntu-mono;
+            margin: 0;
+            padding-bottom: 15px;
+            border-bottom: 1px solid $color-border;
+        }
+
+        p {
+            font-family: $ubuntu-mono;
+            margin: 2px 0 0;
+            padding-top: 15px;
+        }
+
+        .user-result-container,
+        .diary-result-container {
+            margin-top: 15px;
+        }
+
+        .user-result-container {
+            ul {
+                display: grid;
+                gap: 25px;
+                padding: 0;
+                max-width: 100%;
+                grid-template-columns: repeat(2, 1fr);
+
+                @media (max-width: 650px) {
+                    grid-template-columns: 1fr; 
+                }
+
+            }
+
+            li {
+                list-style: none;
+                width: 100%; 
+            }
+
+            a {
+                color: $color-text-dark;
+                text-decoration: none;
+            }
+
+            .profile-header {
+                border: 1px solid $color-border;
+                border-radius: 5px;
+                background-color: $color-light-grey;
+                padding: 10px 35px 10px 10px;
+                display: flex;
+                align-items: center;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: $color-grey;
+                }
+    
+                @media (max-width: 600px) {
+                    padding: 8px 10px;
+                }
+
+                .profile-picture {
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 50%;
+                    margin-right: 15px;
+                    box-shadow: inset 0px 0px 10px $shadow-dark;
+
+                    @media (max-width: 600px) {
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+            }
+
+            .profile-info {
+                .username {
+                    font-size: 24px;
+                    color: $color-text-dark;
+                    font-family: $ubuntu-mono;
+                    margin: 0;
+                    white-space: nowrap; 
+                    text-overflow: ellipsis; 
+                    overflow: hidden; 
+                    max-width: 180px;
+
+                    @media (max-width: 600px) {
+                        font-size: 21px;
+                        max-width: 140px;
+                    }
+                }
+    
+                .joined-date-text {
+                    font-family: $ubuntu-mono;
+                    font-size: 14px;
+                    color: $color-text-light;
+                    margin: 5px 0 0;
+
+                    @media (max-width: 600px) {
+                        font-size: 13px;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+
+        .diary-result-container {
+            font-family: $ubuntu-mono;
+
+            ol {
+                padding: 0;
+                margin: 0;
+                list-style-position: outside; 
+            }
+            
+            li {
+                border-bottom: 1px solid $color-border;
+                padding: 20px 0;
+            }
+
+            .date-user-container {
+                display: flex;
+                align-items: center; 
+                gap: 1px;
+                text-transform: uppercase;
+                font-family: $ubuntu-mono;
+                margin-bottom: 10px;
+
+                .date {
+                    margin: 0;
+                    font-size: 14px; 
+                    color: $color-text-light;
+                    padding: 0;
+                }
+
+                .date::before {
+                    content: "•";
+                    margin: 0px 3px 0px 5px;
+                }
+
+                .user-icon {
+                    margin: 0;
+                    font-size: 14px; 
+                    text-decoration: none;
+                    color: inherit; 
+                    color: $color-secondary;
+                    transition: border-color .2s, background-color .2s, color .2s;
+                    display: flex; 
+                    align-items: center; 
+                    
+                    .fa-icon {
+                        font-size: 10px;
+                        margin-right: 4px; 
+                    }
+
+                    &:hover {
+                        color: $color-primary;
+                    }
+                }
+            }
+
+            .diary-title {
+                font-size: 1.4em; 
+                font-weight: bold;
+                font-family: $ubuntu-mono; 
+                color: $color-text-dark; 
+                word-break: break-word;
+                text-decoration: none; 
+                display: block; 
+                margin: 0 0 5px;
+                transition: border-color .2s, background-color .2s, color .2s;
+
+                &:hover {
+                    color: $color-primary;
+                }
+            }
+
+            .description {
+                margin: 0;
+                font-family: $ubuntu-mono;
+                color: $color-description;
+                word-wrap: break-word;
+            }
+        }
+    }
+
+}
